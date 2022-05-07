@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root{
+    --red: hsl(0, 100%, 74%);
+    --green:  hsl(154, 59%, 51%);
+    --blue: hsl(248, 32%, 49%);
+    --dark-blue: hsl(249, 10%, 26%);
+    --grey-blue: hsl(246, 25%, 77%);
+    --white: hsl(0, 0%, 100%);
+    --body-font: 'Poppins', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    font-family: var(--body-font);
+    min-height: 100vh;
+    background-image: url(images/bg-intro-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--red);
+    background-position: center;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.mainContainer{
+    margin: 0 auto;
+    max-width: 1105px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 7.5rem;
+    grid-gap: 1.4rem;
+}
+
+.infoSection{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--white);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.infoSection h1{
+    font-size: 3rem;
+    line-height: 3rem;
+}
+
+.infoSection p{
+    font-weight: 500;
+}
+
+.formSection{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    width: 100%;
+}
+
+.salesBtn{
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: transparent;
+    border-style: solid;
+    cursor: pointer;
+    background-color: var(--blue);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 1.3rem 1rem;
+    box-shadow: 0px 9px 5px -1px rgba(0, 0, 0, 0.27);
+    -webkit-box-shadow: 0px 9px 5px -1px rgba(0, 0, 0, 0.27);
+    -moz-box-shadow: 0px 9px 5px -1px rgba(0, 0, 0, 0.27);
+}
+
+.salesBtn span{
+    font-weight: 400;
+}
+
+.mainForm{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2.5rem 2.7rem;
+    box-shadow: 0px 9px 5px -1px rgba(0, 0, 0, 0.27);
+    -webkit-box-shadow: 0px 9px 5px -1px rgba(0, 0, 0, 0.27);
+    -moz-box-shadow: 0px 9px 5px -1px rgba(0, 0, 0, 0.27);
+}
+
+.mainForm .inputField{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+input{
+    padding: 1.2rem;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--grey-blue);
+    opacity: 0.8;
+}
+
+input::placeholder{
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding-left: 0.8rem;
+}
+
+input:focus-visible{
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: var(--blue);
+}
+
+.nameLabel,
+.lastNameLabel,
+.emailAddressLabel,
+.passwordLabel{
+    text-align: right;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--red);
+    font-style: italic;
+}
+
+.successMsg{
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--green);
+    font-style: italic;
+}
+
+.firstNameError,
+.lastNameError,
+.emailError,
+.passwordError{
+    display: none;
+    right: 3%;
+    top: 25%;
+    position: absolute;
+    align-items: right;
+    background-image: url(images/icon-error.svg);
+    background-repeat: no-repeat;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.submitInfo{
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: transparent;
+    border-style: solid;
+    cursor: pointer;
+    background-color: var(--green);
+    color: var(--white);
+    text-transform: uppercase;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all ease-in-out 0.3s;
+}
+
+.tnx{
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--grey-blue);
+    text-align: center;
+}
+
+.tnx a{
+    text-decoration: none;
+    color: var(--red);
+    font-weight: 600;
+}
+
+@media (hover: hover){
+    .submitInfo:hover{
+        opacity: 0.7;
+        transition: all ease-in-out 0.2s;
+    }
+}
+
+@media screen and(max-width: 800px) {
+    body{
+        background-image: url(images/bg-intro-mobile.png);
+    }
+
+    .mainContainer{
+        grid-template-columns: 1fr;
+        margin-bottom: 5rem;
+    }
+
+    .infoSection{
+        text-align: center;
+    }
+
+    .infoSection h1{
+        font-size: 2.5rem;
+    }
+}
